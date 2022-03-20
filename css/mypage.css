@@ -1,3 +1,177 @@
-body{
-    background: rgb(34, 34, 38);
+body {
+  background: rgb(34, 34, 38);
+}
+.content {
+  width: 70%;
+  height: 100%;
+  position: relative;
+  margin-top: 5%;
+  left: 23%;
+  display: grid;
+  grid-template: 100% / 250px 600px;
+  gap: 20px;
+  overflow: auto;
+  z-index: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+.left-column {
+  display: grid;
+  grid-template: 300px 130px 425px / 250px;
+  grid-row: 1;
+  grid-column: 1;
+  gap: 20px;
+}
+.right-column {
+  display: grid;
+  grid-template: 300px 200px 50px / 600px;
+  grid-row: 1;
+  grid-column: 2;
+  gap: 20px;
+}
+.row{
+  background-color: rgb(51, 51, 54);
+  border-radius: 5px;
+}
+.left-column__profile {
+  grid-row: 1;
+  padding: 15px;
+}
+.right-column__info {
+  grid-row: 1;
+}
+.avatar {
+  object-fit: cover;
+  border-radius: 2px;
+}
+.info__main {
+  padding: 15px 20px;
+}
+.info {
+  height: 100%;
+}
+.info__top {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgb(75, 74, 74);
+}
+.info__name {
+  margin: 0;
+  font-size: 23px;
+  color: white;
+}
+.info__status {
+  padding-top: 3px;
+  color: rgb(121, 121, 121);
+  font-size: 13px;
+}
+.info__online {
+  float: right;
+  padding-top: 5px;
+  font-size: 12px;
+  color: rgb(143, 163, 166);
+}
+.info__middle {
+  padding-top: 10px;
+}
+.label {
+  display: inline-block;
+  color: rgb(100, 102, 102);
+  padding-top: 10px;
+  font-size: 13px;
+  width: 200px;
+}
+.labeleed {
+  display: inline-block;
+  color: white;
+  font-size: 13px;
+}
+.info__bottom {
+  margin-top: 25px;
+  border-top: 1px solid rgb(75, 74, 74);
+  text-align: center;
+}
+.counter {
+  display: inline-block;
+  padding: 27px 15px 15px 15px;
+}
+.counter__count {
+  font-weight: bold;
+  color: rgb(121, 121, 121);
+  font-size: 18px;
+  text-align: center;
+}
+.counter__label {
+  color: rgb(100, 102, 102);
+  font-size: 12px;
+}
+.right-column__photos {
+  grid-row: 2;
+}
+.header-top{
+  padding: 15px 15px 0px 15px;
+  font-size: 13px;
+}
+.header-label{
+  color: white;
+  padding-left: 13px;
+}
+.header-count{
+  color: rgb(143, 163, 166);
+  padding-left: 5px;
+}
+.photos{
+  padding: 10px 20px 5px 20px;
+  text-align: center;
+}
+.photo{
+  object-fit: cover;
+  width: 125px;
+  height: 125px;
+  padding: 5px;
+}
+.left-column__gifts{
+  grid-row: 2;
+}
+.gifts{
+  padding: 15px 20px 5px 20px;
+  text-align: center;
+}
+.gift{
+  width: 66px;
+  height: 66px;
+}
+.left-column__friends{
+  grid-row: 3;
+}
+.right-column__posts{
+  grid-row: 3;
+}
+.people{
+  padding: 15px 20px 5px 20px;
+  text-align: center;
+}
+.all-friends{
+  padding: 10px 15px 0 15px;
+  border-bottom: 1px solid rgb(34, 34, 38);
+}
+.people-row{
+  text-align: center;
+}
+.people-cell{
+  text-align: center;
+  display: inline-block;
+  padding: 9px;
+}
+.friend-avatar{
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.friend-name{
+  font-size: 13px;
+  color: white;
+}
+.right-column__posts{
+  grid-row: 3;
 }
