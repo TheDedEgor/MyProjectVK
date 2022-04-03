@@ -2,18 +2,16 @@ body {
   background: rgb(34, 34, 38);
 }
 .content {
-  width: 70%;
+  width: 900px;
   height: 100%;
   position: relative;
-  margin-top: 5%;
-  left: 23%;
+  top: 70px;
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
   grid-template: 100% / 250px 600px;
   gap: 20px;
-  overflow: auto;
-  z-index: 0;
   font-family: Arial, Helvetica, sans-serif;
-  overflow: hidden;
 }
 .left-column {
   display: grid;
@@ -43,6 +41,8 @@ body {
 .avatar {
   object-fit: cover;
   border-radius: 2px;
+  height: 250px;
+  width: 217px;
 }
 .info__main {
   padding: 15px 20px;

@@ -62,7 +62,7 @@
   display: inline-block;
 }
 
-.menu__tooltip .menu__tooltiptext {
+.menu__tooltiptext {
   visibility: hidden;
   width: 120px;
   background-color: #555;
@@ -79,7 +79,7 @@
   transition: opacity 0.3s;
 }
 
-.menu__tooltip .menu__tooltiptext::before {
+.menu__tooltiptext::before {
   content: "";
   position: absolute;
   bottom: 100%;
