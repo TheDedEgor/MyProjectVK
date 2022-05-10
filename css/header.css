@@ -13,8 +13,8 @@
 }
 
 .logo__ico {
-  height: 27px;
-  width: 27px;
+  height: 23px;
+  width: 23px;
 }
 
 .logo__title {
@@ -24,8 +24,8 @@
 }
 
 .search {
-  background-image: url(/icons/search.png);
-  background-size: 16px, 16px;
+  background-image: url(/icons/search.svg);
+  background-size: 18px, 18px;
   background-color: rgb(68, 68, 70);
   background-repeat: no-repeat;
   background-position: 8px;
@@ -52,7 +52,7 @@
   align-items: center;
   width: 100%;
   position: fixed;
-  z-index: 5;
+  z-index: 1;
   left: 0;
   top:0;
 }
@@ -95,8 +95,9 @@
   opacity: 1;
 }
 
-.menu__tooltip:hover {
-  border-radius: 50%;
-  background-color: rgb(68, 68, 70);
-  padding: 4px;
+.menu__tooltip:hover .menu__icon{
+  /* border-radius: 50%;
+  background-color: rgb(68, 68, 70); */
+  /* fill: white; */
+  filter: brightness(0) invert(1);
 }

@@ -5,34 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/normalize.css" type="text/css" />
     <link rel="stylesheet" href="/css/header.css" type="text/css" />
-    <link rel="stylesheet" href="/css/mypage.css" type="text/css" />
+    <link rel="stylesheet" href="/css/myPage.css" type="text/css" />
+    <script src="/js/friends.js"></script>
+    <script src="/js/gifts.js"></script>
+    <script src="/js/profile.js"></script>
+    <script src="/js/photos.js"></script>
+    <script src="/js/posts.js"></script>
     <title>Моя страница</title>
   </head>
   <body>
     <header class="header">
       <a href="/" class="logo">
-        <img class="logo__ico" src="/icons/Vk.png" alt="Лого" />
+        <img class="logo__ico" src="/icons/vk.svg" alt="Лого" />
         <h1 class="logo__title">ВКОНТАКТЕ</h1>
       </a>
       <nav class="menu">
         <a href="/" class="menu__tooltip link">
-          <img class="menu__icon" src="/icons/mypage.png" alt="Моя страница" />
+          <img class="menu__icon" src="/icons/mypage.svg" alt="Моя страница" />
           <span class="menu__tooltiptext">Моя страница</span>
         </a>
         <a href="/html/mypage.html" class="menu__tooltip link">
-          <img class="menu__icon" src="/icons/news.png" alt="Новости" />
+          <img class="menu__icon" src="/icons/news.svg" alt="Новости" />
           <span class="menu__tooltiptext">Новости</span>
         </a>
         <a href="/" class="menu__tooltip link">
-          <img class="menu__icon" src="/icons/im.png" alt="Мессенджер" />
+          <img class="menu__icon" src="/icons/message.svg" alt="Мессенджер" />
           <span class="menu__tooltiptext">Мессенджер</span>
         </a>
         <a href="/" class="menu__tooltip link">
-          <img class="menu__icon" src="/icons/friends.png" alt="Друзья" />
+          <img class="menu__icon" src="/icons/friends.svg" alt="Друзья" />
           <span class="menu__tooltiptext">Друзья</span>
         </a>
         <a href="/" class="menu__tooltip link">
-          <img class="menu__icon" src="/icons/photos.png" alt="Фотографии" />
+          <img class="menu__icon" src="/icons/photos.svg" alt="Фотографии" />
           <span class="menu__tooltiptext">Фотографии</span>
         </a>
       </nav>
@@ -40,158 +45,198 @@
     </header>
     <main class="content">
       <div class="left-column">
-        <span class="left-column__profile row">
-          <img
+        <span class="left-column__item row">
+          <!-- <img
             class="avatar"
             src="/photos/avatar.jpg"
             alt="Моя фотография"
-            height="250"
-            width="217"
-          />
+          /> -->
         </span>
-        <span class="left-column__gifts row">
+        <span class="left-column__item row">
           <div class="header-top">
             <span class="header-label"> Подарки </span>
-            <span class="header-count"> 115 </span>
+            <span class="header-count" id="count-gifts-content"> 0 </span>
           </div>
           <div class="gifts">
-            <img class="gift" src="/photos/gift.png" />
-            <img class="gift" src="/photos/gift.png" />
-            <img class="gift" src="/photos/gift.png" />
+            <!-- <img class="gift" src="/photos/gift.png" alt="Подарок" />
+            <img class="gift" src="/photos/gift.png" alt="Подарок" />
+            <img class="gift" src="/photos/gift.png" alt="Подарок" /> -->
           </div>
         </span>
-        <span class="left-column__friends row">
+        <span class="left-column__item row">
           <div class="header-top">
             <span class="header-label">Друзья</span>
-            <span class="header-count">185</span>
+            <span class="header-count" id="count-friends-content">0</span>
           </div>
           <div class="all-friends">
-            <div class="people-row">
+            <!-- <div class="people-row">
               <div class="people-cell">
-                <img class="friend-avatar" src="/photos/friend1.png" >
+                <img
+                  class="friend-avatar"
+                  src="/photos/friend1.png"
+                  alt="Фото друга"
+                />
                 <div class="friend-name">Сергей</div>
               </div>
               <div class="people-cell">
-                <img class="friend-avatar" src="/photos/friend1.png" >
+                <img
+                  class="friend-avatar"
+                  src="/photos/friend1.png"
+                  alt="Фото друга"
+                />
                 <div class="friend-name">Дима</div>
               </div>
               <div class="people-cell">
-                <img class="friend-avatar" src="/photos/friend1.png" >
+                <img
+                  class="friend-avatar"
+                  src="/photos/friend1.png"
+                  alt="Фото друга"
+                />
                 <div class="friend-name">Артем</div>
               </div>
             </div>
             <div class="people-row">
               <div class="people-cell">
-                <img class="friend-avatar" src="/photos/friend1.png" >
+                <img
+                  class="friend-avatar"
+                  src="/photos/friend1.png"
+                  alt="Фото друга"
+                />
                 <div class="friend-name">Даша</div>
               </div>
               <div class="people-cell">
-                <img class="friend-avatar" src="/photos/friend1.png" >
+                <img
+                  class="friend-avatar"
+                  src="/photos/friend1.png"
+                  alt="Фото друга"
+                />
                 <div class="friend-name">Лена</div>
               </div>
               <div class="people-cell">
-                <img class="friend-avatar" src="/photos/friend1.png" >
+                <img
+                  class="friend-avatar"
+                  src="/photos/friend1.png"
+                  alt="Фото друга"
+                />
                 <div class="friend-name">Катя</div>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="header-top">
             <span class="header-label">Друзья онлайн</span>
-            <span class="header-count">30</span>
+            <span class="header-count" id="count-online-friends-content">0</span>
           </div>
           <div class="online-friends">
-            <div class="people-row">
+            <!-- <div class="people-row">
               <div class="people-cell">
-                <img class="friend-avatar" src="/photos/friend2.png" >
+                <img
+                  class="friend-avatar"
+                  src="/photos/friend2.png"
+                  alt="Фото друга онлайн"
+                />
                 <div class="friend-name">Сергей</div>
               </div>
               <div class="people-cell">
-                <img class="friend-avatar" src="/photos/friend2.png" >
+                <img
+                  class="friend-avatar"
+                  src="/photos/friend2.png"
+                  alt="Фото друга онлайн"
+                />
                 <div class="friend-name">Дима</div>
               </div>
               <div class="people-cell">
-                <img class="friend-avatar" src="/photos/friend2.png" >
+                <img
+                  class="friend-avatar"
+                  src="/photos/friend2.png"
+                  alt="Фото друга онлайн"
+                />
                 <div class="friend-name">Артем</div>
               </div>
             </div>
             <div class="people-row">
               <div class="people-cell">
-                <img class="friend-avatar" src="/photos/friend2.png" >
+                <img
+                  class="friend-avatar"
+                  src="/photos/friend2.png"
+                  alt="Фото друга онлайн"
+                />
                 <div class="friend-name">Даша</div>
               </div>
               <div class="people-cell">
-                <img class="friend-avatar" src="/photos/friend2.png" >
+                <img
+                  class="friend-avatar"
+                  src="/photos/friend2.png"
+                  alt="Фото друга онлайн"
+                />
                 <div class="friend-name">Лена</div>
               </div>
               <div class="people-cell">
-                <img class="friend-avatar" src="/photos/friend2.png" >
+                <img
+                  class="friend-avatar"
+                  src="/photos/friend2.png"
+                  alt="Фото друга онлайн"
+                />
                 <div class="friend-name">Катя</div>
               </div>
-            </div>
+            </div> -->
           </div>
         </span>
       </div>
       <div class="right-column">
-        <span class="right-column__info row">
-          <div class="info">
-            <div class="info__main">
-              <div class="info__top">
-                <div class="info__online">онлайн</div>
-                <h1 class="info__name">Егор Корепин</h1>
-                <div class="info__status">Пробуем верстать)</div>
-              </div>
-              <div class="info__middle">
-                <div class="info__row">
+        <span class="right-column__item row">
+          <div class="info__main">
+            <div class="info__top">
+              <div class="info__online"></div>
+              <h1 class="info__name"></h1>
+              <div class="info__status"></div>
+            </div>
+            <div class="info__middle">
+              <!-- <div class="info__row">
                   <div class="label">День рождения:</div>
-                  <div class="labeleed">5 января</div>
+                  <div class="labeleed" >5 января</div>
                 </div>
                 <div class="info__row">
                   <div class="label">Город:</div>
                   <div class="labeleed">Ярославль</div>
                 </div>
-                <div class="info__row">
-                  <div class="label">Место учебы:</div>
-                  <div class="labeleed">ЯрГУ им. П. Г. Демидова</div>
-                </div>
-              </div>
+              <div class="info__row">
+                <div class="label">Место учебы:</div>
+                <div class="labeleed">ЯрГУ им. П. Г. Демидова</div>
+              </div> -->
             </div>
-            <div class="info__bottom">
-              <div class="counter">
-                <div class="counter__count">185</div>
-                <div class="counter__label">друзей</div>
-              </div>
-              <div class="counter">
-                <div class="counter__count">60</div>
-                <div class="counter__label">подписчика</div>
-              </div>
-              <div class="counter">
-                <div class="counter__count">4</div>
-                <div class="counter__label">фотографии</div>
-              </div>
-              <div class="counter">
-                <div class="counter__count">6</div>
-                <div class="counter__label">отметок</div>
-              </div>
-              <div class="counter">
-                <div class="counter__count">512</div>
-                <div class="counter__label">аудиозаписей</div>
-              </div>
+          </div>
+          <div class="info__bottom">
+            <div class="counter">
+              <div class="counter__count" id="count-friends-info">0</div>
+              <div class="counter__label">друзей</div>
+            </div>
+            <div class="counter">
+              <div class="counter__count" id="count-followers-info">0</div>
+              <div class="counter__label">подписчика</div>
+            </div>
+            <div class="counter">
+              <div class="counter__count" id="count-photos-info">0</div>
+              <div class="counter__label">фотографии</div>
+            </div>
+            <div class="counter">
+              <div class="counter__count" id="count-tags-info">0</div>
+              <div class="counter__label" >отметок</div>
             </div>
           </div>
         </span>
-        <span class="right-column__photos row">
+        <span class="right-column__item row">
           <div class="header-top">
             <span class="header-label"> Мои фотографии </span>
-            <span class="header-count"> 4 </span>
+            <span class="header-count" id="count-photos"> 0 </span>
           </div>
           <div class="photos">
-            <img class="photo" src="/photos/photo1.jpg" />
+            <!-- <img class="photo" src="/photos/photo1.jpg" />
             <img class="photo" src="/photos/photo2.jpg" />
             <img class="photo" src="/photos/photo3.jpg" />
-            <img class="photo" src="/photos/photo4.jpg" />
+            <img class="photo" src="/photos/photo4.jpg" /> -->
           </div>
         </span>
-        <span class="right-column__posts row">
+        <span class="right-column__item row" id="posts">
           <div class="header-top">
             <span class="header-label"> Все записи </span>
           </div>
