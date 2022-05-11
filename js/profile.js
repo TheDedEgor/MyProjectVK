@@ -1,34 +1,4 @@
-const url4 = `https://api.vk.com/method/photos.get?album_id=profile&rev=1&feed_type=photo&count=1&access_token=${access_token}&v=5.131`;
-const url5 = `https://api.vk.com/method/account.getProfileInfo?access_token=${access_token}&v=5.131`;
-const url6 = `https://api.vk.com/method/users.get?user_ids=${user_id}&fields=online,education&access_token=${access_token}&v=5.131`;
-const url7 = `https://api.vk.com/method/users.getFollowers?user_ids=${user_id}&access_token=${access_token}&v=5.131`;
 const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
-fetch(url4).then(res => res.json()).then(
-    (res) => {
-        const data = res.response;
-        setPhotoProfile(data.items[0].sizes);
-    }
-);
-fetch(url5).then(res => res.json()).then(
-    (res) => {
-        const data = res.response;
-        setInfoTop(data);
-        setInfoMiddle(data);
-    }
-);
-fetch(url6).then(res => res.json()).then(
-    (res) => {
-        const data = res.response;
-        setUniversity(data[0]);
-        setOnline(data[0]);
-    }
-);
-fetch(url7).then(res => res.json()).then(
-    (res) => {
-        const data = res.response;
-        setFollowers(data);
-    }
-);
 function setUniversity(data){
     if(data.university_name != ""){
         const info_middle = document.getElementsByClassName("info__middle")[0];
