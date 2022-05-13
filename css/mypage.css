@@ -1,0 +1,202 @@
+body {
+  background: rgb(34, 34, 38);
+}
+.content {
+  width: 900px;
+  height: auto;
+  position: relative;
+  top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.left-column__item{
+  width: 250px;
+}
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.right-column__item{
+  width: 600px;
+}
+.row {
+  background-color: rgb(51, 51, 54);
+  border-radius: 5px;
+  border: 1px solid #525050;
+}
+.avatar {
+  object-fit: cover;
+  border-radius: 2px;
+  height: 255px;
+  width: 220px;
+  padding: 15px;
+}
+.info__main {
+  padding: 15px 20px;
+}
+.info__top {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgb(75, 74, 74);
+}
+.info__name {
+  margin: 0;
+  font-size: 23px;
+  color: white;
+}
+.info__status {
+  padding-top: 3px;
+  color: rgb(121, 121, 121);
+  font-size: 13px;
+}
+.info__online {
+  float: right;
+  padding-top: 5px;
+  font-size: 12px;
+  color: rgb(143, 163, 166);
+}
+.info__middle {
+  padding-top: 10px;
+}
+.label {
+  display: inline-block;
+  color: rgb(100, 102, 102);
+  padding-top: 10px;
+  font-size: 13px;
+  width: 200px;
+}
+.labeleed {
+  display: inline-block;
+  color: white;
+  font-size: 13px;
+}
+.info__bottom {
+  margin-top: 25px;
+  border-top: 1px solid rgb(75, 74, 74);
+  text-align: center;
+}
+.counter {
+  display: inline-block;
+  padding: 27px 15px 15px 15px;
+}
+.counter__count {
+  font-weight: bold;
+  color: rgb(121, 121, 121);
+  font-size: 18px;
+  text-align: center;
+}
+.counter__label {
+  color: rgb(100, 102, 102);
+  font-size: 12px;
+}
+.header-top {
+  padding: 15px 15px 0px 15px;
+  font-size: 13px;
+}
+.header-label {
+  color: white;
+  padding-left: 13px;
+}
+.header-count {
+  color: rgb(143, 163, 166);
+  padding-left: 5px;
+}
+.photos {
+  padding: 10px 20px 5px 20px;
+  text-align: center;
+}
+.photo {
+  object-fit: cover;
+  width: 125px;
+  height: 125px;
+  padding: 5px;
+}
+.gifts {
+  padding: 15px 20px 5px 20px;
+  text-align: center;
+}
+.gift {
+  width: 66px;
+  height: 66px;
+}
+.people {
+  padding: 15px 20px 5px 20px;
+  text-align: center;
+}
+.all-friends {
+  padding: 10px 15px 0 15px;
+  border-bottom: 1px solid rgb(34, 34, 38);
+}
+.online-friends{
+  padding: 10px 15px 0 15px;
+}
+.people-row {
+  text-align: center;
+}
+.people-cell {
+  text-align: center;
+  display: inline-block;
+  padding: 9px;
+}
+.friend-avatar {
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.friend-name {
+  font-size: 11px;
+  color: white;
+}
+.photo-post{
+  padding: 15px;
+}
+.info-post{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(75, 74, 74);
+}
+.likes{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  background-color: #474343;
+  padding: 5px;
+  border-radius: 10px;
+}
+.views{
+  display: flex;
+  gap: 5px;
+  background-color: #474343;
+  padding: 5px;
+  align-items: center;
+  border-radius: 10px;
+}
+.like-ico{
+  width: 16px;
+  height: 16px;
+}
+.view-ico{
+  width: 18px;
+  height: 18px;
+}
+.likes-count{
+  text-align: center;
+  font-size: 13px;
+}
+.views-coint{
+  font-size: 13px;
+}
