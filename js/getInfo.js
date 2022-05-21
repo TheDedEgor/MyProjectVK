@@ -1,8 +1,8 @@
 // 8099310 - id приложения
 // Запрос для получени токена:
-//https://oauth.vk.com/authorize?client_id=8099310&display=page&redirect_uri=&scope=friends,photos,wall&response_type=token&v=5.131&state=123456
+//https://oauth.vk.com/authorize?client_id=8099310&display=page&redirect_uri=&scope=friends,photos,wall,groups&response_type=token&v=5.131&state=123456
 //Расширение Google Chrome, чтобы работали запросы и не мешал CORS - "Cross Domain - CORS"
-const access_token = "d6424c3f968f55776d7235d6d8fa0ec852fe70ad41abf48b60cb4ecc37058fe942446f78abc0662741c32";
+const access_token = "14266f00c2aa60fe9241988042bb30856f5f878c6892e49aeb7d90ec3fb28620482b84e65b2f01823011e";
 // VKscript
 const code = `
     var userId = 161781618;
@@ -23,7 +23,6 @@ const url = `https://api.vk.com/method/execute?code=${code}&access_token=${acces
 fetch(url).then(res => res.json()).then(
     (res) => {
         const data = res.response;
-        console.log(data);
         allFriends(data[0]);
         onlineFriends(data[1]);
         gifts(data[2]);
@@ -72,6 +71,66 @@ function addInfoProfile(data) {
     setUniversity(data[0]);
     setOnline(data[0]);
 }
+
+
+
+
+function focuselem(){
+    const element = document.getElementsByClassName('result-search')[0];
+    result();
+    element.style.visibility = 'visible';
+}
+function blurelem(){
+    const element = document.getElementsByClassName('result-search')[0];
+    element.style.visibility = 'hidden';
+}
+function result(){
+    const search = document.getElementsByClassName('search')[0];
+    const result_search = document.getElementsByClassName('result-search')[0];
+    result_search.replaceChildren();
+    const q = search.value;
+    const url = `https://api.vk.com/method/search.getHints?q=${q}&fields=photo_50&limit=10&access_token=${access_token}&v=5.131`;
+    fetch(url).then(res => res.json()).then(
+        (res) => {
+           const items = res.response.items;
+           console.log(items);
+           for(let item of items.slice(0,8)){
+                let result_item = document.createElement('div');
+                result_item.classList.add('result-item');
+                let img = document.createElement('img');
+                img.classList.add('result-item__photo');
+                let info = document.createElement('div');
+                info.classList.add('result-item__info');
+                console.log(item);
+                if(item.type == "profile" ){
+                    let src = item.profile.photo_50;
+                    img.setAttribute('src', src);
+                    info.textContent = `${item.profile.first_name} ${item.profile.last_name}`;
+                }
+                else if(item.type == "group" ){
+                    let src = item.group.photo_50;
+                    img.setAttribute('src', src);
+                    info.textContent = item.group.name;
+                }
+                else if(item.type == "vk_app" ){
+                    let src = item.app.icon_75;
+                    img.setAttribute('src', src);
+                    info.textContent = item.app.title;
+                }
+                result_item.append(img);
+                result_item.append(info);
+                result_search.append(result_item);
+           }
+           
+        }
+    );
+}
+const search = document.getElementsByClassName('search')[0];
+search.addEventListener('focus', focuselem);
+search.addEventListener('blur', blurelem);
+search.addEventListener('input', result);
+
+
 
 //methods friends
 function fillAllOnlineFriends(items) {
