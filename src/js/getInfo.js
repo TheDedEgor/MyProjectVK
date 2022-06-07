@@ -2,39 +2,39 @@
 // Запрос для получени токена:
 //https://oauth.vk.com/authorize?client_id=8099310&display=page&redirect_uri=&scope=friends,photos,wall,groups&response_type=token&v=5.131&state=123456
 //Расширение Google Chrome, чтобы работали запросы и не мешал CORS - "Cross Domain - CORS"
-const access_token = "14266f00c2aa60fe9241988042bb30856f5f878c6892e49aeb7d90ec3fb28620482b84e65b2f01823011e";
+//const access_token = "14266f00c2aa60fe9241988042bb30856f5f878c6892e49aeb7d90ec3fb28620482b84e65b2f01823011e";
 // VKscript
-const code = `
-    var userId = 161781618;
-    var allFriends0 = API.friends.get({"user_id":userId,"fields":"photo_200_orig","order":"random","count":6});
-    var results = API.friends.getOnline({"user_id":userId,"order":"random"});
-    var onlineFriends1 = API.users.get({"user_ids":results,"fields":"photo_200_orig"});
-    var gifts2 = API.gifts.get({"user_id":userId,"count": 3});
-    var allPhotos3 = API.photos.getAll({"owner_id":userId,"count":4});
-    var allTags4 = API.photos.getUserPhotos({"user_id":userId});
-    var allPosts5 = API.wall.get({"owner_id":userId,"filter":"owner"});
-    var allFollowers6 = API.users.getFollowers({"user_ids":userId});
-    var photoProfile7 = API.photos.get({"album_id":"profile", "rev":1,"feed_type":"photo","count":1});
-    var mainInfoProfile8 = API.account.getProfileInfo();
-    var addInfoProfile9 = API.users.get({"user_ids":userId, "fields":"online,education"});
-    return [allFriends0, onlineFriends1, gifts2, allPhotos3, allTags4, allPosts5, allFollowers6, photoProfile7, mainInfoProfile8, addInfoProfile9];
-`;
-const url = `https://api.vk.com/method/execute?code=${code}&access_token=${access_token}&v=5.131`;
-fetch(url).then(res => res.json()).then(
-    (res) => {
-        const data = res.response;
-        allFriends(data[0]);
-        onlineFriends(data[1]);
-        gifts(data[2]);
-        allPhotos(data[3]);
-        allTags(data[4]);
-        allPosts(data[5]);
-        allFollowers(data[6]);
-        photoProfile(data[7]);
-        mainInfoProfile(data[8]);
-        addInfoProfile(data[9]);
-    }
-);
+// const code = `
+//     var userId = 161781618;
+//     var allFriends0 = API.friends.get({"user_id":userId,"fields":"photo_200_orig","order":"random","count":6});
+//     var results = API.friends.getOnline({"user_id":userId,"order":"random"});
+//     var onlineFriends1 = API.users.get({"user_ids":results,"fields":"photo_200_orig"});
+//     var gifts2 = API.gifts.get({"user_id":userId,"count": 3});
+//     var allPhotos3 = API.photos.getAll({"owner_id":userId,"count":4});
+//     var allTags4 = API.photos.getUserPhotos({"user_id":userId});
+//     var allPosts5 = API.wall.get({"owner_id":userId,"filter":"owner"});
+//     var allFollowers6 = API.users.getFollowers({"user_ids":userId});
+//     var photoProfile7 = API.photos.get({"album_id":"profile", "rev":1,"feed_type":"photo","count":1});
+//     var mainInfoProfile8 = API.account.getProfileInfo();
+//     var addInfoProfile9 = API.users.get({"user_ids":userId, "fields":"online,education"});
+//     return [allFriends0, onlineFriends1, gifts2, allPhotos3, allTags4, allPosts5, allFollowers6, photoProfile7, mainInfoProfile8, addInfoProfile9];
+// `;
+// const url = `https://api.vk.com/method/execute?code=${code}&access_token=${access_token}&v=5.131`;
+// fetch(url).then(res => res.json()).then(
+//     (res) => {
+//         const data = res.response;
+//         allFriends(data[0]);
+//         onlineFriends(data[1]);
+//         gifts(data[2]);
+//         allPhotos(data[3]);
+//         allTags(data[4]);
+//         allPosts(data[5]);
+//         allFollowers(data[6]);
+//         photoProfile(data[7]);
+//         mainInfoProfile(data[8]);
+//         addInfoProfile(data[9]);
+//     }
+// );
 function allFriends(data) {
     setCountFriends(data);
     fillAllFriends(data.items);
@@ -274,7 +274,7 @@ function createViewsPost(data) {
     return views;
 }
 //methods profile
-const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+//const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
 function setUniversity(data){
     if(data.university_name != ""){
         const info_middle = document.getElementsByClassName("info__middle")[0];
