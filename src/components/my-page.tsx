@@ -8,7 +8,9 @@ import { InfoProfile } from "./infoProfile";
 import { PhotoProfile } from "./photo-profile";
 import { Photos } from "./photos";
 import { Posts } from "./posts";
-
+/** 
+ * React-элемент с основным содержанием страницы.
+*/
 export function MyPage() {
   const [data, setData] = useState<any>(undefined);
   useEffect(() => {

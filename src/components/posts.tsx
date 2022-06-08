@@ -1,7 +1,9 @@
 import "../css/myPage.css";
 import likesIcon from "../icons/likes.svg";
 import viewIcon from "../icons/views.svg";
-
+/** 
+ * React-элемент с постами.
+*/
 export function Posts(props: { data: any }) {
   return (
     <span className="right-column__item row">

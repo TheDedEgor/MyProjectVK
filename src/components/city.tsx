@@ -1,5 +1,7 @@
 import "../css/myPage.css";
-
+/** 
+ * React-элемент с информацией об городе.
+*/
 export function City(props: { data: any }) {
   return (
     <div className="info__row">

@@ -1,5 +1,7 @@
 import "../css/myPage.css";
-
+/** 
+ * React-элемент с подарками.
+*/
 export function Gifts(props: { data: any }) {
   return (
     <span className="left-column__item row">

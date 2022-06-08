@@ -2,7 +2,9 @@ import "../css/myPage.css";
 import { Birthday } from "./birthday";
 import { City } from "./city";
 import { University } from "./university";
-
+/** 
+ * React-элемент с основной информацией о профиле.
+*/
 export function InfoProfile(props: { data: any }) {
   return (
     <span className="right-column__item row">

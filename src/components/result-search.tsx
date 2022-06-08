@@ -1,5 +1,7 @@
 import "../css/header.css";
-
+/** 
+ * React-элемент результатов поиска.
+*/
 export function ResultSearch(props: { result: any[] }) {
   return (
     <div className="result-search">

@@ -1,5 +1,7 @@
 import "../css/myPage.css";
-
+/** 
+ * React-элемент с информацией обо всех друзьях.
+*/
 export function AllFriends(props: { data: any }) {
   return (
     <span className="left-column__item row">

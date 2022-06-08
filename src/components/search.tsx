@@ -3,7 +3,9 @@ import { BaseSyntheticEvent, useState } from "react";
 import { access_token } from "../consts";
 import "../css/header.css";
 import { ResultSearch } from "./result-search";
-
+/** 
+ * React-элемент поиска.
+*/
 export function Search() {
   const [isVisible, setVisible] = useState(false);
   const [arrayResult, setArrayResult] = useState<any>([]);

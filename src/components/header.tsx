@@ -6,7 +6,9 @@ import newsLogo from "../icons/news.svg";
 import friendsLogo from "../icons/friends.svg";
 import "../css/header.css";
 import { Search } from "./search";
-
+/** 
+ * React-элемент Header страницы.
+*/
 export function Header() {
   return (
     <header className="header">

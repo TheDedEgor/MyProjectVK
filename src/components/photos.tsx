@@ -1,5 +1,7 @@
 import "../css/myPage.css";
-
+/** 
+ * React-элемент фотографий.
+*/
 export function Photos(props: { data: any }) {
   return (
     <span className="right-column__item row">

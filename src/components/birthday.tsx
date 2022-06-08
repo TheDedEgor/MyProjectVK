@@ -1,6 +1,8 @@
 import { months } from "../consts";
 import "../css/myPage.css";
-
+/** 
+ * React-элемент с информацией об дне рождения.
+*/
 export function Birthday(props: { data: any }) {
     const birthday = props.data.bdate.split('.');
     let result ="";

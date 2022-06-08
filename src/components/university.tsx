@@ -1,5 +1,7 @@
 import "../css/myPage.css";
-
+/** 
+ * React-элемент об учебе.
+*/
 export function University(props: { data: any }) {
   return (
     <div className="info__row">
