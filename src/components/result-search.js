@@ -2,10 +2,10 @@ import "../css/header.css";
 /** 
  * React-элемент результатов поиска.
 */
-export function ResultSearch(props: { result: any[] }) {
+export function ResultSearch(props) {
   return (
     <div className="result-search">
-      {props.result.map((item: any, index: number) => {
+      {props.result.map((item, index) => {
         if (item.type === "profile") {
           return (
             <div className="result-item" key={index}>
