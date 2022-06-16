@@ -1,19 +1,16 @@
-import { useContext } from "react";
 import "../css/myPage.css";
-import { ContextData } from "./my-page";
 import likesIcon from "../icons/likes.svg";
 import viewIcon from "../icons/views.svg";
 /** 
  * React-элемент с постами.
 */
 export function Posts(props) {
-  const data = useContext(ContextData);
   return (
     <span className="right-column__item row">
       <div className="header-top">
         <span className="header-label"> Все записи </span>
       </div>
-      {data[5].items.map((item) => {
+      {props.data_posts.items.map((item) => {
         if (item.post_source.data === "profile_photo") {
           return (<div className="post" key={item.id}>
             <img

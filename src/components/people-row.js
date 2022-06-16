@@ -5,7 +5,7 @@ import "../css/myPage.css";
 export function PeopleRow(props) {
     return (
         <div className="people-row">
-            {props.friends.map((item) => (
+            {props.data_friends.map((item) => (
                 <div className="people-cell" key={item.id}>
                     <img
                         className="friend-avatar"

@@ -1,36 +1,55 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { access_token } from "../consts";
 import "../css/header.css";
 import { ResultSearch } from "./result-search";
-import debounce from "lodash.debounce"
+import useDebounce from "../hooks/debounceHook";
 /** 
  * React-элемент поиска.
 */
 export function Search() {
   const [isVisible, setVisible] = useState(false);
   const [arrayResult, setArrayResult] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+
+  useEffect(
+    () => {
+      if (debouncedSearchTerm) {
+        getResult(debouncedSearchTerm).then(result => {
+          setArrayResult(result);
+        });
+      } else {
+        setArrayResult([]);
+      }
+    },
+    [debouncedSearchTerm]
+  );
 
   function showOrHiddenResult() {
     setVisible(!isVisible);
-    getResult();
+    getResult('').then(result => {
+      setArrayResult(result);
+    });
   }
 
-  function getResult(event) {
-    const q = event ? event.target.value : "";
+  function getResult(q) {
     const url = `https://api.vk.com/method/search.getHints?q=${q}&fields=photo_50&limit=10&access_token=${access_token}&v=5.131`;
-    axios
+    return (axios
       .get(url)
-      .then((result) => setArrayResult(result.data.response.items.slice(0, 8)))
-      .catch(err => console.log(err));
+      .then(result => result.data.response.items.slice(0, 8))
+      .catch(err => {
+        console.log(err);
+        return [];
+      }));
   }
-  const resultDebounced = debounce(getResult, 500);
+
   return (
     <div>
       <input
         onFocus={showOrHiddenResult}
         onBlur={showOrHiddenResult}
-        onChange={resultDebounced}
+        onChange={e => setSearchTerm(e.target.value)}
         type="search"
         className="search"
         placeholder="Поиск"

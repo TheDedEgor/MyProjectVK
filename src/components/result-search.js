@@ -5,10 +5,10 @@ import "../css/header.css";
 export function ResultSearch(props) {
   return (
     <div className="result-search">
-      {props.result.map((item, index) => {
+      {props.result.map((item) => {
         if (item.type === "profile") {
           return (
-            <div className="result-item" key={index}>
+            <div className="result-item" key={item.profile.id}>
               <img
                 className="result-item__photo"
                 src={item.profile.photo_50}
@@ -21,7 +21,7 @@ export function ResultSearch(props) {
           );
         } else if (item.type === "group") {
           return (
-            <div className="result-item" key={index}>
+            <div className="result-item" key={item.group.id}>
               <img
                 className="result-item__photo"
                 src={item.group.photo_50}
@@ -32,7 +32,7 @@ export function ResultSearch(props) {
           );
         } else if (item.type === "vk_app") {
           return (
-            <div className="result-item" key={index}>
+            <div className="result-item" key={item.app.id}>
               <img
                 className="result-item__photo"
                 src={item.app.icon_75}
@@ -41,8 +41,6 @@ export function ResultSearch(props) {
               <div className="result-item__info">{item.app.title}</div>
             </div>
           );
-        } else {
-          return <div className="result-item" key={index}></div>;
         }
       })}
     </div>

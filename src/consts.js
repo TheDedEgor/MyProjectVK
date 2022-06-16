@@ -4,7 +4,7 @@
 //Расширение Google Chrome, чтобы работали запросы и не мешал CORS - "Cross Domain - CORS"
 //161781618
 export const access_token =
-  "vk1.a.1NoVokAVyTnn4Ok5aMLsdwN9qWEvmMgIjK-P_Gy7TaX11JDUV8LE-WdeWHa9usZJ8GlM933oi6bg6yA0jPGSW1ilhDK2OGwJwTF2YpG7Pj0jyapbpMOSo_v512VQL8GrjxMAD0dWVKSwM_wnmuu3KOgypFsO3otLOnNjMAYALU3OdizRHon7KFpU4Du5j4t7";
+  "vk1.a.63sRIzEKdjs1fQrTrBQrBsN8z-NUijQdI2wEdnZQ6CCoM8Xmo_30Ez6K8qTt-2yNdnoRIiFCgi3bs8EQUN1MEA86C7cZFDEMxQLdxUt48ionPUL-mfBaFT1Vd0p_LRB8tBCbJOcJqici94vldQKXK-SS6ehrBJnDuG_CZ6JEAPwYvcJzcUZvasO7HtNqUPly";
 const code = `
 var userId = 161781618;  
 var allFriends0 = API.friends.get({"user_id":userId,"fields":"photo_200_orig","order":"random","count":6});

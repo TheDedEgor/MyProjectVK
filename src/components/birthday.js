@@ -1,15 +1,12 @@
-import { useContext } from "react";
 import { months } from "../consts";
 import "../css/myPage.css";
-import { ContextData } from "./my-page";
 /** 
  * React-элемент с информацией об дне рождения.
 */
 export function Birthday(props) {
-  const data = useContext(ContextData);
-  const birthday = data[8].bdate.split('.');
+  const birthday = props.data_birth.bdate.split('.');
   let result = "";
-  if (data[8].bdate_visibility === 1) {
+  if (props.data_birth.bdate_visibility === 1) {
     result = birthday[0] + " " + months[birthday[1] - 1] + " " + birthday[2];
   }
   else {
